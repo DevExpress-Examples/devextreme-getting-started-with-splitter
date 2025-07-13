@@ -1,8 +1,8 @@
-<script setup>
-import HomeContent from "../components/HomeContent.vue";
+<script setup lang="ts">
+import HomeContent from '../components/HomeContent.vue';
 </script>
 
 <template>
-  <HomeContent />
+  <HomeContent text="Count"/>
 </template>
 

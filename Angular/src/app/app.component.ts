@@ -26,13 +26,13 @@ export class AppComponent {
 
   suppressFieldChangeEvent = false;
 
-  onFieldDataChanged(e: any) {
+  onFieldDataChanged(e: any): void {
     if (!this.suppressFieldChangeEvent) {
       this.output.push(e.value);
     }
   }
 
-  resetFormAndOutput() {
+  resetFormAndOutput(): void {
     this.suppressFieldChangeEvent = true;
     this.employee = { ...this.initialEmployee };
     this.output = ['Output:'];
