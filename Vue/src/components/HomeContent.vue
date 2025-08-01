@@ -1,26 +1,42 @@
 <template>
-  <DxSplitter :width="500" :height="400" :separator-size="5">
+  <DxSplitter
+    :width="500"
+    :height="400"
+    :separator-size="5"
+  >
     <DxItem size="285px">
       <DxForm
         :form-data="employee"
         @field-data-changed="onFieldDataChanged"
-      ></DxForm>
+      />
     </DxItem>
     <DxItem>
-      <DxSplitter orientation="vertical" :separator-size="5">
+      <DxSplitter
+        orientation="vertical"
+        :separator-size="5"
+      >
         <DxItem size="80%">
           <div>
-            <div v-for="(item, index) in output" :key="index">{{ item }}</div>
+            <div
+              v-for="(item, index) in output"
+              :key="index"
+            >{{ item }}</div>
           </div>
         </DxItem>
-        <DxItem :collapsible="true" minSize="40px">
-          <DxButton text="Clear all entries" @click="resetFormAndOutput"></DxButton>
+        <DxItem
+          :collapsible="true"
+          min-size="40px"
+        >
+          <DxButton
+            text="Clear all entries"
+            @click="resetFormAndOutput"
+          />
         </DxItem>
         <DxItem
           :collapsible="true"
           text="All rights are reserved © 2024"
-          maxSize="30px"
-        ></DxItem>
+          max-size="30px"
+        />
       </DxSplitter>
     </DxItem>
   </DxSplitter>

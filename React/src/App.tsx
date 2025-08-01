@@ -1,10 +1,10 @@
 import 'devextreme/dist/css/dx.light.css';
-import { useState } from 'react';
-import Form from 'devextreme-react/form';
+import { useCallback, useState } from 'react';
+import Form, { type FormTypes } from 'devextreme-react/form';
 import Button from 'devextreme-react/button';
 import Splitter, { Item } from 'devextreme-react/splitter';
 
-const App = () => {
+function App(): JSX.Element {
   const initialEmployee = {
     ID: 1,
     FirstName: 'John',
@@ -19,23 +19,23 @@ const App = () => {
   };
 
   const [employee, setEmployee] = useState({ ...initialEmployee });
-  const [output, setOutput] = useState(['Output:']);
+  const [output, setOutput] = useState<string[]>(['Output:']);
   const [suppressFieldChangeEvent, setSuppressFieldChangeEvent] = useState(false);
 
-  const onFieldDataChanged = (e) => {
+  const onFieldDataChanged = useCallback((e: FormTypes.FieldDataChangedEvent): void => {
     if (!suppressFieldChangeEvent) {
-      setOutput((prevOutput) => [...prevOutput, e.value]);
+      setOutput((prevOutput) => [...prevOutput, e.value as string]);
     }
-  };
+  }, [suppressFieldChangeEvent]);
 
-  const resetFormAndOutput = () => {
+  const resetFormAndOutput = useCallback((): void => {
     setSuppressFieldChangeEvent(true);
     setEmployee({ ...initialEmployee });
     setOutput(['Output:']);
     setTimeout(() => {
       setSuppressFieldChangeEvent(false);
     }, 0);
-  };
+  }, []);
 
   return (
     <Splitter
@@ -70,6 +70,6 @@ const App = () => {
       </Item>
     </Splitter>
   );
-};
+}
 
 export default App;
