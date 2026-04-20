@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
+import { DxSplitterModule } from 'devextreme-angular/ui/splitter';
+import { DxFormModule } from 'devextreme-angular/ui/form';
+import { DxButtonModule } from 'devextreme-angular/ui/button';
 
 @Component({
     selector: 'app-root',
+    imports: [DxSplitterModule, DxFormModule, DxButtonModule],
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    standalone: false
 })
 
 export class AppComponent {
