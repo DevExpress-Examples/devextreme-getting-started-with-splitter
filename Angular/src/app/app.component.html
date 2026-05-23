@@ -9,7 +9,9 @@
   <dxi-item>
     <dx-splitter orientation="vertical" [separatorSize]="5">
       <dxi-item size="80%">
-        <div *ngFor="let item of output">{{ item }}</div>
+        @for (item of output; track item) {
+        <div>{{ item }}</div>
+        }
       </dxi-item>
       <dxi-item [collapsible]="true" minSize="40px">
         <dx-button
