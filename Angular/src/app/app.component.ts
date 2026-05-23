@@ -4,10 +4,10 @@ import { DxFormModule } from 'devextreme-angular/ui/form';
 import { DxButtonModule } from 'devextreme-angular/ui/button';
 
 @Component({
-    selector: 'app-root',
-    imports: [DxSplitterModule, DxFormModule, DxButtonModule],
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss'],
+  selector: 'app-root',
+  imports: [DxSplitterModule, DxFormModule, DxButtonModule],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
 
 export class AppComponent {
