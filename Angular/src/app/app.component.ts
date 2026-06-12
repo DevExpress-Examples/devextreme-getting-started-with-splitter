@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { DxSplitterModule } from 'devextreme-angular/ui/splitter';
 import { DxFormModule } from 'devextreme-angular/ui/form';
 import { DxButtonModule } from 'devextreme-angular/ui/button';
@@ -7,6 +7,7 @@ import { DxButtonModule } from 'devextreme-angular/ui/button';
   selector: 'app-root',
   imports: [DxSplitterModule, DxFormModule, DxButtonModule],
   templateUrl: './app.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./app.component.scss'],
 })
 
